@@ -36,7 +36,7 @@
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("/babel-standalone-importmap-react/sw.js", { scope: "/babel-standalone-importmap-react" })
+        .register("/babel-standalone-importmap-react/sw.js", { scope: "/babel-standalone-importmap-react/" })
         .then((registration) => {
           window.serviceWorkerRegistration = registration;
           // use `await window.serviceWorkerRegistration.unregister()` to unregister the service worker
