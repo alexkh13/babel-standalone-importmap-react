@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="root"></div>
+  <!--
+    JSPM Generator Import Map
+    Edit URL: https://generator.jspm.io/#U2NhYGBiDs0rySzJSU1hKEpNTC7RTcnPdTC00DPWM4QIQDkA9TuJOSwA
+  -->
+   <script type="importmap">
+  {
+    "imports": {
+      "react": "https://ga.jspm.io/npm:react@18.3.1/index.js",
+      "react-dom": "https://ga.jspm.io/npm:react-dom@18.3.1/index.js"
+    },
+    "scopes": {
+      "https://ga.jspm.io/": {
+        "scheduler": "https://ga.jspm.io/npm:scheduler@0.23.2/index.js"
+      }
+    }
+  }
+  </script>
+  
+  <!-- ES Module Shims: Import maps polyfill for older browsers without import maps support (eg Safari 16.3) -->
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
+  
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel" data-presets="react" data-type="module" src="main.jsx"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "/" })
+        .then((registration) => {
+          window.serviceWorkerRegistration = registration;
+          // use `await window.serviceWorkerRegistration.unregister()` to unregister the service worker
+        })
+        .catch(onError);
+    } else {
+      onError("Browser does not support service workers :-(");
+    }
+
+    function onError(err) {
+      console.error("Error registering service-worker:", err);
+      document.getElementById("root").innerText = err.toString();
+    }
+  </script>
+
+</body>
+</html>
